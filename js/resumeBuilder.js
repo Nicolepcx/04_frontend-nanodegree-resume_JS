@@ -39,15 +39,15 @@ work.display = function(){
                                 .append(HTMLworkDescription.replace("%data%", work.jobs[job]["description"]));
     }
 
-}
+};
 // Projects JSON
 var projects = {
     "projects": [
         {
             "title": "Resume",
-            "date worked": "2016",
+            "dates": "2016",
             "description": "Resume project for Udacity Front-end Web Development Nanodegree",
-            "image": "images/Print_Screen_Portfolio.png",
+            "images": "images/Print_Screen_Portfolio.png",
             "github": "https://github.com/Nicolepcx/00_Portfolio_Website_NK/tree/master",
             "demo": "http://nicolepcx.github.io/",
         }
@@ -66,13 +66,13 @@ projects.display = function(){
 
             $(".project-entry:last").append('<div id="div' + project + '"></div>')
                                         .append(HTMLprojectTitle.replace("%data%", projects.projects[project]["title"]))
-                                        .append(HTMLprojectImage.replace("%data%", projects.projects[project]["image"]))
-                                        .append(HTMLprojectDates.replace("%data%", projects.projects[project]["date worked"]))
+                                        .append(HTMLprojectImage.replace("%data%", projects.projects[project]["images"]))
+                                        .append(HTMLprojectDates.replace("%data%", projects.projects[project]["dates"]))
                                         .append(HTMLprojectDescription.replace("%data%", projects.projects[project]["description"]));
             // display demo or github json info if they exisit
             if (projects.projects[project]["demo"] != undefined )
                 $(".project-entry:last").append(HTMLprojectDemo.replace("#", projects.projects[project]["demo"]));
-            if (projects.projects[project]["github"] != undefined )
+            if (projects.projects[project]["github"] !== undefined )
                 $(".project-entry:last").append(HTMLprojectGithub.replace("#", projects.projects[project]["github"]));
 
     }
@@ -84,8 +84,8 @@ var bio = {
     "first name": "Nicole",
     "last name": "Königstein",
     "role": "Front-End Developer",
-    "welcome message": "–Welcome to my Resume Website!– \n I am currently working as a Creative Director at a publishing house. I love to be creative @ work, but I'm also passionate about Programming, Data Science, Machine Learning, Web Design and Web Development. Therefore, I am looking forward to studying more in my foreseeable future, to gain more experience and expertise.",
-    "bio pic": "images/Passfoto_Nicole_Koenigstein.jpg",
+    "welcomeMessage": "–Welcome to my Resume Website!– \n I am currently working as a Creative Director at a publishing house. I love to be creative @ work, but I'm also passionate about Programming, Data Science, Machine Learning, Web Design and Web Development. Therefore, I am looking forward to studying more in my foreseeable future, to gain more experience and expertise.",
+    "biopic": "images/Passfoto_Nicole_Koenigstein.jpg",
     "contacts":
         {
             "mobile number": "+41-78-834 12 15",
@@ -106,21 +106,16 @@ bio.display = function(){
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts["github username"]);
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio["bio pic"]);
-    var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio["welcome message"]);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio["biopic"]);
+    var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio["welcomeMessage"]);
 
 
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedLName);
-    $("#header").prepend(formattedFName);
+    $("#header").prepend(formattedFName, formattedLName, formattedRole);
     $("#header").append(formattedWelcomeMsg);
-    $("#topContacts ul").append(formattedMobile);
-    $("#topContacts ul").append(formattedEmail);
-    $("#topContacts ul").append(formattedGithub);
-    $("#topContacts ul").append(formattedTwitter);
-    $("#topContacts ul").append(formattedLocation);
+    $("#topContacts ul").append(formattedEmail, formattedMobile, formattedLocation, formattedGithub, formattedTwitter);
 
-}
+
+};
 //Education JSON
 var education = {
     "schools": [
@@ -137,19 +132,19 @@ var education = {
         {
             "title": "Passion4digital, Social Media",
             "school": "iversity",
-            "dates": 2015,
+            "date": "2015",
             "url": "https://iversity.org/"
         },
         {
             "title": "Intro to Programming Nanodegree",
             "school": "Udacity",
-            "dates": 2016,
+            "date": "2016",
             "url": "https://www.udacity.com/nanodegrees"
         },
         {
             "title": "Front-end Web Development",
             "school": "Udacity",
-            "dates": 2016,
+            "date": "2016",
             "url": "https://www.udacity.com/nanodegrees"
         }
     ],
@@ -171,12 +166,12 @@ education.display = function(){
     for (var onlineCourse in education.onlineCourses){
         var num = education.schools.length + parseInt(onlineCourse);
         $("#education").append(HTMLschoolStart);
-        $(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse]["dates"]))
+        $(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse]["date"]))
                                     .append(HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse]["school"]))
                                     .append(HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse]["title"]))
                                     .append(HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse]["url"]));
     }
-}
+};
 //Map
 $("#mapDiv").append(googleMap);
 
@@ -250,7 +245,7 @@ var skillsChartLabels = function(){
       var skillHTML = '<span class="label ' + skillLabelColor + '">' + skillLabel + '</span>';
       $("#skills-list").append(skillHTML);
     }
-}
+};
 
 
 // Call functions
