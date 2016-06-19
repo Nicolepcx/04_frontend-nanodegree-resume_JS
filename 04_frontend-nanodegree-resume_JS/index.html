@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Nicole's Resume</title>
+    <!--Page Styles and Font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800" rel="stylesheet">
+    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=zocial">
+    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=brandico">
+    <link href="css/icons.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.min.css" rel="stylesheet" />
+    <!--fontawesome.io JS-->
+    <script src="https://use.fontawesome.com/970dabab43.js"></script>
+    <!--JS-->
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/helper.js"></script>
+    <!-- Chart.js -->
+    <script src="js/Chart.js"></script>
+    <script type="text/javascript" src="js/d3.min.js"></script>
+    <script type="text/javascript" src="js/radialProgress.js"></script>
+    <!--Google Maps-->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+        <section class="col-md-8">
+          <!--Header Info: name, role and welcome message-->
+          <p id="header" class="header-info">
+          </p>
+        </section>
+        <section class="col-md-4">
+          <!--Top Contact Info: phone, email, address and etc-->
+          <div id="topContacts">
+          <h3><span class="fa fa-info" aria-hidden="true"></span>CONTACTS</h3>
+            <ul class="flex-box"></ul>
+          </div>
+          </section>
+      </header><!---end 1st row-->
+
+      <article class="row">
+        <section class="col-md-7">
+          <!--Skills Info: list of skills and skills chart-->
+          <h2 class="text-left"><span class="fa fa-wrench" aria-hidden="true"></span>SKILLS</h2>
+          <!--List of Skills-->
+          <div id ="skills-list">
+          </div>
+          <!--Skills Chart-->
+          <div id="skills-chart-holder" class="text-center skills-chart-holder">
+            <canvas id="skills-chart" width="400" height="400"></canvas>
+          </div>
+        </section>
+        <section class="col-md-5">
+          <!--Work Experience Info: list of work experiences-->
+          <div id="workExperience">
+            <h2><span class="fa fa-briefcase" aria-hidden="true"></span>WORK EXPERIENCE</h2>
+          </div>
+        </section>
+      </article><!-- end 2nd row -->
+
+      <article class="row">
+        <section class="col-md-12">
+          <!--Project Info: list of projects and progress chart-->
+          <div id="projects">
+            <h2><span class="fa fa-files-o" aria-hidden="true"></span>PROJECTS</h2>
+          </div>
+        </section>
+      </article><!-- end 3rd row -->
+
+      <article class="row">
+      <section class="col-md-7">
+      <!--Education Info: list of education and online courses-->
+          <div id="education">
+            <h2><span class="fa fa-graduation-cap" aria-hidden="true"></span>EDUCATION</h2>
+            <h3><span></span>School</h3>
+          </div>
+          </section>
+        <section class="col-md-5">
+          <!--Languages Info-->
+          <h2><span class="fa fa-globe" aria-hidden="true"></span>Languages</h2>
+          <h3>German</h3>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+              <span>Native</span>
+            </div>
+          </div>
+          <h3>English</h3>
+          <div class="progress">
+            <div class="progress-bar progress-bar-info-english" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+              <span>Full professional proficiency</span>
+            </div>
+          </div>
+          <h3>Spanish</h3>
+          <div class="progress">
+            <div class="progress-bar progress-bar-info-spanish" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+              <span>Limited working proficiency</span>
+            </div>
+          </div>
+          <h3>French</h3>
+          <div class="progress">
+            <div class="progress-bar progress-bar-info-french" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
+              <span>Intermediate</span>
+            </div>
+            </div>
+          </section>
+      </article><!--end 4th row-->
+        <article class="col-md-12">
+          <section id="mapDiv">
+            <h2><span class="fa fa-map" aria-hidden="true"></span>Where I've Lived and Worked</h2>
+        </section>
+      </article><!--end 5th row-->
+    </div><!--end main container-->
+
+    <footer id="social"> <!--Footer-->
+            <a href="https://twitter.com/nickoenigstein" target="_blank" class="zocial-twitter">Twitter</a>
+            <a href="https://github.com/Nicolepcx" target="_blank" class="brandico-github">Github</a>
+            <a href="https://www.facebook.com/nkoenigstein" target="_blank" class="zocial-facebook">Facebook</a>
+            <a href="https://plus.google.com/u/0/108274346593002081004/posts" class="zocial-googleplus" target="_blank">Google+</a>
+        </footer>
+
+    <script src="js/resumeBuilder.js"></script>
+
+  </body>
+</html>
