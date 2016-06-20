@@ -1,3 +1,5 @@
+
+//var HTMLheaderFName = "<h1 id='name' class='name'>%data%</h1>";
 var HTMLheaderFName = "<h1 id='name' class='first-name'>%data%</h1>";
 var HTMLheaderLName = "<h1 id='name' class='last-name'>%data%</h1>";
 var HTMLheaderRole = "<h2>%data%</h2>";

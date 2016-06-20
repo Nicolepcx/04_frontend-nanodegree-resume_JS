@@ -1,3 +1,5 @@
+"use strict";
+
 
 //Work JSON
 var work = {
@@ -47,7 +49,7 @@ var projects = {
             "title": "Resume",
             "dates": "2016",
             "description": "Resume project for Udacity Front-end Web Development Nanodegree",
-            "images": "images/Print_Screen_Portfolio.png",
+            "images": ["images/Print_Screen_Portfolio.png"],
             "github": "https://github.com/Nicolepcx/00_Portfolio_Website_NK/tree/master",
             "demo": "http://nicolepcx.github.io/",
         }
@@ -81,6 +83,7 @@ projects.display = function(){
 
 //Bio JSON
 var bio = {
+// "name": "Nicole Königstein",
     "first name": "Nicole",
     "last name": "Königstein",
     "role": "Front-End Developer",
@@ -98,6 +101,7 @@ var bio = {
 
 };
 bio.display = function(){
+  //var formattedName = HTMLheaderName.replace("%data%", bio["name"].toUpperCase());
     var formattedFName = HTMLheaderFName.replace("%data%", bio["first name"].toUpperCase());
     var formattedLName = HTMLheaderLName.replace("%data%", bio["last name"].toUpperCase());
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role.toUpperCase());
@@ -110,6 +114,7 @@ bio.display = function(){
     var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio["welcomeMessage"]);
 
 
+  //$("#header").prepend(formattedName);
     $("#header").prepend(formattedFName, formattedLName, formattedRole);
     $("#header").append(formattedWelcomeMsg);
     $("#topContacts ul").append(formattedEmail, formattedMobile, formattedLocation, formattedGithub, formattedTwitter);
